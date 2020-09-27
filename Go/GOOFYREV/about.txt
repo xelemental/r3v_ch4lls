@@ -1,0 +1,6 @@
+Challenge Name : GOOFYREV 
+Challenge Category : Reversing  
+Challenge Flag : darkCTF{737472696e67}
+
+
+Description : Its quite a simple binary , which has multiple hurdles in the form of characters , make sure to get that final magic hash which leads you to the flag .
