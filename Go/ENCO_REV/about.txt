@@ -1,0 +1,8 @@
+
+
+Challenge NAME : ENCO_REV
+Challenge Category: Rev 
+Challenge Flag : darkCTF{72657670776e}
+CTF EVENT : DARKARMYCTF
+
+Description : Its quite a simple binary ,just on the opposite of MD5 resides the key to points
