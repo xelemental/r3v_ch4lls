@@ -1,0 +1,4 @@
+Challenge Name : Baked_Password 
+Challenge Flag: darkCTF{72657670726f}
+Challenge Category : Reversing 
+Description : A simple binary whose key is hidden among the ASCII values . Make sure to check the compare statements too
