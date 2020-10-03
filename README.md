@@ -2,6 +2,6 @@
 Collection of Source Code and Binaries of the reversing challenges by Elemental X
 
 
-Challenges built using GOLang and Rust 
+Challenges built using GoLang and Rust 
 
 
