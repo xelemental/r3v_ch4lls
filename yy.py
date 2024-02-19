@@ -224,7 +224,7 @@ print
 
 # Print obfuscated
 print("[*] Showing obfuscated result...")
-pprint(obfuscated)
+print(obfuscated)
 
 print
 
