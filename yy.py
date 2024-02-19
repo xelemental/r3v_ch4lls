@@ -57,13 +57,13 @@ def ed(data, key):
 
 content = open(sys.argv[1]).read()
 
-print "[*] Obfuscating strings..."
+print("[*] Obfuscating strings...")
 
 # Find string not within double quotes only
 m = re.findall("(\".+?\")", content)
 for n in m:
     if (n.strip() != "\"\"") and (n.strip() != "\"\"\""):
-        print "STRING FOUND: %s" % (n)
+        print("STRING FOUND: %s" % (n))
         tmpstr = n
 
         """ remove first '"' and last '"' """
@@ -96,7 +96,7 @@ for n in m:
 m = re.findall("(\"\".*\"\")", content)
 for n in m:
     if n.strip() != "":
-        print "STRING FOUND: %s" % (n)
+        print("STRING FOUND: %s" % (n))
         tmpstr = n
 
         """ remove first '"' and last '"' """
@@ -180,42 +180,42 @@ decrypt_method = decrypt_method.replace("byte2str", RANDOM_FUNCTION_NAME_2)
 print
 
 # Rename the variables with random names
-print "[*] Obfuscating variables..."
+print("[*] Obfuscating variables...")
 
 variables = re.findall("[dD]im (.+) [Aa]s .+:?", new_content)
 for v in variables:
     if len(v) > 3:
-        print "VARIABLE FOUND: " + v
+        print("VARIABLE FOUND: " + v)
         new_variable_random_name = get_random_string(8)
         new_content = new_content.replace(v, new_variable_random_name)
     else:
-        print "SKIPPED VARIABLE: " + v + " (TOO SHORT)"
+        print("SKIPPED VARIABLE: " + v + " (TOO SHORT)")
 
 print
 
 # Obfuscate the function names with random names
-print "[*] Obfuscating function names..."
+print("[*] Obfuscating function names...")
 
 funcs = re.findall("function (.+) as", new_content, re.IGNORECASE)
 for f in funcs:
-    print f
+    print(f)
 
 subs = re.findall("sub (.+)", new_content, re.IGNORECASE)
 for s in subs:
     if len(s) > 3:
         if "document_" in s.lower():
-            print "SKIPPED FUNCTION NAME: " + s + " (VBA DOCUMENT FUNCTION)"
+            print("SKIPPED FUNCTION NAME: " + s + " (VBA DOCUMENT FUNCTION)")
         else:
             new_function_random_name = get_random_string(8)
 
             if "()" in s:
-                print "FUNCTION FOUND: " + s
+                print("FUNCTION FOUND: " + s)
                 new_content = new_content.replace(s, new_function_random_name + "()")
             else:
-                print "SKIPPED FUNCTION NAME: " + s + " (GOT PARAMETERS SO IGNORED)"
+                print("SKIPPED FUNCTION NAME: " + s + " (GOT PARAMETERS SO IGNORED)")
 
     else:
-        print "SKIPPED FUNCTION NAME: " + s + " (TOO SHORT)"
+        print("SKIPPED FUNCTION NAME: " + s + " (TOO SHORT)")
 
 # Combine header, decrypt method and content
 new_content = header + decrypt_method + '\n' + new_content
@@ -223,7 +223,7 @@ new_content = header + decrypt_method + '\n' + new_content
 print
 
 # Print obfuscated
-print "[*] Showing obfuscated result..."
+print("[*] Showing obfuscated result...")
 pprint(obfuscated)
 
 print
